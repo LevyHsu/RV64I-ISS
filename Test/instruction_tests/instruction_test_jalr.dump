@@ -1,0 +1,59 @@
+
+instruction_test_jalr.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	004002ef          	jal	t0,8 <L1>
+
+0000000000000008 <L1>:
+   8:	00000337          	lui	t1,0x0
+   c:	01830367          	jalr	t1,24(t1) # 18 <L1_t>
+  10:	00000513          	addi	a0,zero,0
+  14:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000000000000018 <L1_t>:
+  18:	40530333          	sub	t1,t1,t0
+  1c:	00800593          	addi	a1,zero,8
+  20:	06b31063          	bne	t1,a1,80 <_test_finish>
+  24:	004002ef          	jal	t0,28 <L2>
+
+0000000000000028 <L2>:
+  28:	000003b7          	lui	t2,0x0
+  2c:	054383e7          	jalr	t2,84(t2) # 54 <L2_t>
+  30:	00000513          	addi	a0,zero,0
+  34:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000000000000038 <L3_t>:
+  38:	405e0e33          	sub	t3,t3,t0
+  3c:	00800593          	addi	a1,zero,8
+  40:	04be1063          	bne	t3,a1,80 <_test_finish>
+  44:	00000eb7          	lui	t4,0x0
+
+0000000000000048 <L4>:
+  48:	074e8067          	jalr	zero,116(t4) # 74 <L4_t>
+  4c:	00000513          	addi	a0,zero,0
+  50:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000000000000054 <L2_t>:
+  54:	405383b3          	sub	t2,t2,t0
+  58:	00800593          	addi	a1,zero,8
+  5c:	02b39263          	bne	t2,a1,80 <_test_finish>
+  60:	004002ef          	jal	t0,64 <L3>
+
+0000000000000064 <L3>:
+  64:	00000e37          	lui	t3,0x0
+  68:	038e0e67          	jalr	t3,56(t3) # 38 <L3_t>
+  6c:	00000513          	addi	a0,zero,0
+  70:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000000000000074 <L4_t>:
+  74:	00000593          	addi	a1,zero,0
+  78:	00b01463          	bne	zero,a1,80 <_test_finish>
+  7c:	00100513          	addi	a0,zero,1
+
+0000000000000080 <_test_finish>:
+  80:	00000067          	jalr	zero,0(zero) # 0 <_start>
+	...

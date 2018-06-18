@@ -1,0 +1,42 @@
+49 bytes loaded, start address = 0000000000000000
+Breakpoint set at 0000000000000000
+Memory read word: address = 0000000000000000, data = 099002b700000513
+Fetch: pc = 0000000000000000, ir = 00000513
+addi: rd = 10, rs1 = 0, immed_I = 0000000000000000
+Memory read word: address = 0000000000000000, data = 099002b700000513
+Fetch: pc = 0000000000000004, ir = 099002b7
+lui: rd = 5, immed_U = 0000000009900000
+Memory read word: address = 0000000000000008, data = 000003973132829b
+Fetch: pc = 0000000000000008, ir = 3132829b
+addiw: rd = 5, rs1 = 5, immed_I = 0000000000000313
+Memory read word: address = 0000000000000008, data = 000003973132829b
+Fetch: pc = 000000000000000c, ir = 00000397
+auipc: rd = 7, immed_U = 0000000000000000
+Memory read word: address = 0000000000000010, data = 0053a02301038393
+Fetch: pc = 0000000000000010, ir = 01038393
+addi: rd = 7, rs1 = 7, immed_I = 0000000000000010
+Memory read word: address = 0000000000000010, data = 0053a02301038393
+Fetch: pc = 0000000000000014, ir = 0053a023
+sw: rs1 = 7, rs2 = 5, immed_S = 0000000000000000
+Memory write word: address = 0000000000000018, data = 0990031300000000, mask = ffffffff00000000
+Memory read word: address = 0000000000000018, data = 099003130000100f
+Fetch: pc = 0000000000000018, ir = 0000100f
+fence.i: no operation
+Memory read word: address = 0000000000000018, data = 099003130000100f
+Fetch: pc = 000000000000001c, ir = 09900313
+addi: rd = 6, rs1 = 0, immed_I = 0000000000000099
+Memory read word: address = 0000000000000020, data = 00b3146309900593
+Fetch: pc = 0000000000000020, ir = 09900593
+addi: rd = 11, rs1 = 0, immed_I = 0000000000000099
+Memory read word: address = 0000000000000020, data = 00b3146309900593
+Fetch: pc = 0000000000000024, ir = 00b31463
+bne: rs1 = 6, rs2 = 11, immed_B = 0000000000000008
+Memory read word: address = 0000000000000028, data = 0000006700100513
+Fetch: pc = 0000000000000028, ir = 00100513
+addi: rd = 10, rs1 = 0, immed_I = 0000000000000001
+Memory read word: address = 0000000000000028, data = 0000006700100513
+Fetch: pc = 000000000000002c, ir = 00000067
+jalr: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Breakpoint reached at 0000000000000000
+0000000000000001
+Instructions executed: 12

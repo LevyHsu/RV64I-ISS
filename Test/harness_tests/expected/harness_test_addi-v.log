@@ -1,0 +1,17 @@
+Memory read word: address = 0000000000002000, data = 000000005a608113
+Fetch: pc = 0000000000002000, ir = 5a608113
+addi: rd = 2, rs1 = 1, immed_I = 00000000000005a6
+11111111111115a6
+Memory read word: address = 0000000000002010, data = 00000000a5308113
+Fetch: pc = 0000000000002010, ir = a5308113
+addi: rd = 2, rs1 = 1, immed_I = fffffffffffffa53
+1111111111110a53
+Memory read word: address = 0000000000002020, data = 000000005a648493
+Fetch: pc = 0000000000002020, ir = 5a648493
+addi: rd = 9, rs1 = 9, immed_I = 00000000000005a6
+11111111111115a6
+Memory read word: address = 0000000000002030, data = 00000000a5348493
+Fetch: pc = 0000000000002030, ir = a5348493
+addi: rd = 9, rs1 = 9, immed_I = fffffffffffffa53
+1111111111110a53
+Instructions executed: 4

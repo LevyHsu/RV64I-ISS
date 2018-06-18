@@ -1,0 +1,65 @@
+
+instruction_test_sltiu.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	3e800413          	addi	s0,zero,1000
+   8:	7d043913          	sltiu	s2,s0,2000
+   c:	00100593          	addi	a1,zero,1
+  10:	0cb91463          	bne	s2,a1,d8 <_test_finish>
+  14:	83000413          	addi	s0,zero,-2000
+  18:	c1843913          	sltiu	s2,s0,-1000
+  1c:	00100593          	addi	a1,zero,1
+  20:	0ab91c63          	bne	s2,a1,d8 <_test_finish>
+  24:	3e800413          	addi	s0,zero,1000
+  28:	c1843913          	sltiu	s2,s0,-1000
+  2c:	00100593          	addi	a1,zero,1
+  30:	0ab91463          	bne	s2,a1,d8 <_test_finish>
+  34:	00000413          	addi	s0,zero,0
+  38:	3e843913          	sltiu	s2,s0,1000
+  3c:	00100593          	addi	a1,zero,1
+  40:	08b91c63          	bne	s2,a1,d8 <_test_finish>
+  44:	00000413          	addi	s0,zero,0
+  48:	c1843913          	sltiu	s2,s0,-1000
+  4c:	00100593          	addi	a1,zero,1
+  50:	08b91463          	bne	s2,a1,d8 <_test_finish>
+  54:	7d000413          	addi	s0,zero,2000
+  58:	3e843913          	sltiu	s2,s0,1000
+  5c:	00000593          	addi	a1,zero,0
+  60:	06b91c63          	bne	s2,a1,d8 <_test_finish>
+  64:	c1800413          	addi	s0,zero,-1000
+  68:	83043913          	sltiu	s2,s0,-2000
+  6c:	00000593          	addi	a1,zero,0
+  70:	06b91463          	bne	s2,a1,d8 <_test_finish>
+  74:	c1800413          	addi	s0,zero,-1000
+  78:	3e843913          	sltiu	s2,s0,1000
+  7c:	00000593          	addi	a1,zero,0
+  80:	04b91c63          	bne	s2,a1,d8 <_test_finish>
+  84:	3e800413          	addi	s0,zero,1000
+  88:	00043913          	sltiu	s2,s0,0
+  8c:	00000593          	addi	a1,zero,0
+  90:	04b91463          	bne	s2,a1,d8 <_test_finish>
+  94:	c1800413          	addi	s0,zero,-1000
+  98:	00043913          	sltiu	s2,s0,0
+  9c:	00000593          	addi	a1,zero,0
+  a0:	02b91c63          	bne	s2,a1,d8 <_test_finish>
+  a4:	3e800413          	addi	s0,zero,1000
+  a8:	3e843913          	sltiu	s2,s0,1000
+  ac:	00000593          	addi	a1,zero,0
+  b0:	02b91463          	bne	s2,a1,d8 <_test_finish>
+  b4:	c1800413          	addi	s0,zero,-1000
+  b8:	c1843913          	sltiu	s2,s0,-1000
+  bc:	00000593          	addi	a1,zero,0
+  c0:	00b91c63          	bne	s2,a1,d8 <_test_finish>
+  c4:	00000413          	addi	s0,zero,0
+  c8:	00043913          	sltiu	s2,s0,0
+  cc:	00000593          	addi	a1,zero,0
+  d0:	00b91463          	bne	s2,a1,d8 <_test_finish>
+  d4:	00100513          	addi	a0,zero,1
+
+00000000000000d8 <_test_finish>:
+  d8:	00000067          	jalr	zero,0(zero) # 0 <_start>
+	...

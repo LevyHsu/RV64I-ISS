@@ -1,0 +1,9 @@
+Memory read word: address = 0000000000002000, data = 000000005a5a6137
+Fetch: pc = 0000000000002000, ir = 5a5a6137
+lui: rd = 2, immed_U = 000000005a5a6000
+000000005a5a6000
+Memory read word: address = 0000000000002010, data = 00000000a5a53137
+Fetch: pc = 0000000000002010, ir = a5a53137
+lui: rd = 2, immed_U = ffffffffa5a53000
+ffffffffa5a53000
+Instructions executed: 2

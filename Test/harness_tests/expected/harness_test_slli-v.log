@@ -1,0 +1,25 @@
+Memory read word: address = 0000000000002000, data = 0000000000809113
+Fetch: pc = 0000000000002000, ir = 00809113
+slli: rd = 2, rs1 = 1, shamt = 8
+23456789abcdef00
+Memory read word: address = 0000000000002000, data = 0000000003009113
+Fetch: pc = 0000000000002000, ir = 03009113
+slli: rd = 2, rs1 = 1, shamt = 48
+cdef000000000000
+Memory read word: address = 0000000000002000, data = 0000000000009113
+Fetch: pc = 0000000000002000, ir = 00009113
+slli: rd = 2, rs1 = 1, shamt = 0
+0123456789abcdef
+Memory read word: address = 0000000000002000, data = 0000000000849493
+Fetch: pc = 0000000000002000, ir = 00849493
+slli: rd = 9, rs1 = 9, shamt = 8
+23456789abcdef00
+Memory read word: address = 0000000000002000, data = 0000000003049493
+Fetch: pc = 0000000000002000, ir = 03049493
+slli: rd = 9, rs1 = 9, shamt = 48
+cdef000000000000
+Memory read word: address = 0000000000002000, data = 0000000000049493
+Fetch: pc = 0000000000002000, ir = 00049493
+slli: rd = 9, rs1 = 9, shamt = 0
+0123456789abcdef
+Instructions executed: 6

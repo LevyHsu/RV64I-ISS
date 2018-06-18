@@ -1,0 +1,10 @@
+425 bytes loaded, start address = 0000000000000000
+csrrw: unimplemented instruction
+csrrs: unimplemented instruction
+csrrc: unimplemented instruction
+csrrwi: unimplemented instruction
+csrrsi: unimplemented instruction
+csrrci: unimplemented instruction
+Breakpoint reached at 0000000000000000
+0000000000000001
+Instructions executed: 106

@@ -1,0 +1,16 @@
+#! /bin/bash
+
+echo "l \"$1.hex\"" > $1.run
+echo "b 0" >> $1.run
+echo "." >> $1.run
+if [ -z "$2" ]; then
+    echo ". 99999999" >> $1.run
+else
+    let "run_count = $2 - 1"
+    echo ". ${run_count}" >> $1.run
+fi
+echo "x10" >> $1.run
+
+../../rv64sim/rv64sim ${RV64SIM_FLAGS} < $1.run
+
+rm -f $1.run

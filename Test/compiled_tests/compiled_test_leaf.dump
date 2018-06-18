@@ -1,0 +1,77 @@
+
+compiled_test_leaf.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	0010011b          	addiw	sp,zero,1
+   4:	01f11113          	slli	sp,sp,0x1f
+   8:	00000413          	li	s0,0
+   c:	084000e7          	jalr	132(zero) # 84 <main>
+  10:	00000067          	jr	zero
+  14:	0000                	unimp
+	...
+
+0000000000000018 <leaf_example>:
+  18:	fd010113          	addi	sp,sp,-48
+  1c:	02813423          	sd	s0,40(sp)
+  20:	03010413          	addi	s0,sp,48
+  24:	00050793          	mv	a5,a0
+  28:	00068713          	mv	a4,a3
+  2c:	fcf42e23          	sw	a5,-36(s0)
+  30:	00058793          	mv	a5,a1
+  34:	fcf42c23          	sw	a5,-40(s0)
+  38:	00060793          	mv	a5,a2
+  3c:	fcf42a23          	sw	a5,-44(s0)
+  40:	00070793          	mv	a5,a4
+  44:	fcf42823          	sw	a5,-48(s0)
+  48:	fdc42703          	lw	a4,-36(s0)
+  4c:	fd842783          	lw	a5,-40(s0)
+  50:	00f707bb          	addw	a5,a4,a5
+  54:	0007871b          	sext.w	a4,a5
+  58:	fd442683          	lw	a3,-44(s0)
+  5c:	fd042783          	lw	a5,-48(s0)
+  60:	00f687bb          	addw	a5,a3,a5
+  64:	0007879b          	sext.w	a5,a5
+  68:	40f707bb          	subw	a5,a4,a5
+  6c:	fef42623          	sw	a5,-20(s0)
+  70:	fec42783          	lw	a5,-20(s0)
+  74:	00078513          	mv	a0,a5
+  78:	02813403          	ld	s0,40(sp)
+  7c:	03010113          	addi	sp,sp,48
+  80:	00008067          	ret
+
+0000000000000084 <main>:
+  84:	fe010113          	addi	sp,sp,-32
+  88:	00113c23          	sd	ra,24(sp)
+  8c:	00813823          	sd	s0,16(sp)
+  90:	02010413          	addi	s0,sp,32
+  94:	01700793          	li	a5,23
+  98:	fef42623          	sw	a5,-20(s0)
+  9c:	0f800793          	li	a5,248
+  a0:	fef42423          	sw	a5,-24(s0)
+  a4:	01900793          	li	a5,25
+  a8:	fef42223          	sw	a5,-28(s0)
+  ac:	00f00793          	li	a5,15
+  b0:	fef42023          	sw	a5,-32(s0)
+  b4:	fe042683          	lw	a3,-32(s0)
+  b8:	fe442603          	lw	a2,-28(s0)
+  bc:	fe842703          	lw	a4,-24(s0)
+  c0:	fec42783          	lw	a5,-20(s0)
+  c4:	00070593          	mv	a1,a4
+  c8:	00078513          	mv	a0,a5
+  cc:	018000e7          	jalr	24(zero) # 18 <leaf_example>
+  d0:	00050793          	mv	a5,a0
+  d4:	00078713          	mv	a4,a5
+  d8:	0e700793          	li	a5,231
+  dc:	40f707b3          	sub	a5,a4,a5
+  e0:	00f037b3          	snez	a5,a5
+  e4:	0ff7f793          	andi	a5,a5,255
+  e8:	0007879b          	sext.w	a5,a5
+  ec:	00078513          	mv	a0,a5
+  f0:	01813083          	ld	ra,24(sp)
+  f4:	01013403          	ld	s0,16(sp)
+  f8:	02010113          	addi	sp,sp,32
+  fc:	00008067          	ret
+	...

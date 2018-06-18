@@ -1,0 +1,7 @@
+#!/bin/bash
+
+for i in instruction_test_*.hex; do
+  echo "**** Running ${i%.hex} *****"
+  ./run_test ${i%.hex} > ${i%.hex}${RV64SIM_FLAGS// /}.log
+done
+

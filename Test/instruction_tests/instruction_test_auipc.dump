@@ -1,0 +1,41 @@
+
+instruction_test_auipc.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	00001297          	auipc	t0,0x1
+   8:	0040036f          	jal	t1,c <_start+0xc>
+   c:	40628333          	sub	t1,t0,t1
+  10:	000015b7          	lui	a1,0x1
+  14:	ff85859b          	addiw	a1,a1,-8
+  18:	06b31063          	bne	t1,a1,78 <_test_finish>
+  1c:	5a6b7297          	auipc	t0,0x5a6b7
+  20:	0040036f          	jal	t1,24 <_start+0x24>
+  24:	40628333          	sub	t1,t0,t1
+  28:	5a6b75b7          	lui	a1,0x5a6b7
+  2c:	ff85859b          	addiw	a1,a1,-8
+  30:	04b31463          	bne	t1,a1,78 <_test_finish>
+  34:	a5b6c297          	auipc	t0,0xa5b6c
+  38:	0040036f          	jal	t1,3c <_start+0x3c>
+  3c:	40628333          	sub	t1,t0,t1
+  40:	a5b6c5b7          	lui	a1,0xa5b6c
+  44:	ff85859b          	addiw	a1,a1,-8
+  48:	02b31863          	bne	t1,a1,78 <_test_finish>
+  4c:	aaaaa2b7          	lui	t0,0xaaaaa
+  50:	55528293          	addi	t0,t0,1365 # ffffffffaaaaa555 <__global_pointer$+0xffffffffaaaa8cd8>
+  54:	aaaaa5b7          	lui	a1,0xaaaaa
+  58:	5555859b          	addiw	a1,a1,1365
+  5c:	00b29e63          	bne	t0,a1,78 <_test_finish>
+  60:	00000297          	auipc	t0,0x0
+  64:	0040036f          	jal	t1,68 <_start+0x68>
+  68:	40628333          	sub	t1,t0,t1
+  6c:	ff800593          	addi	a1,zero,-8
+  70:	00b31463          	bne	t1,a1,78 <_test_finish>
+  74:	00100513          	addi	a0,zero,1
+
+0000000000000078 <_test_finish>:
+  78:	00000067          	jalr	zero,0(zero) # 0 <_start>
+	...

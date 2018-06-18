@@ -1,0 +1,31 @@
+
+instruction_test_ecall.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	02d2d2b7          	lui	t0,0x2d2d
+   8:	2d32829b          	addiw	t0,t0,723
+   c:	00c29293          	slli	t0,t0,0xc
+  10:	d2d28293          	addi	t0,t0,-723 # 2d2cd2d <__global_pointer$+0x2d2b4d8>
+  14:	00c29293          	slli	t0,t0,0xc
+  18:	2d328293          	addi	t0,t0,723
+  1c:	00d29293          	slli	t0,t0,0xd
+  20:	a5a28293          	addi	t0,t0,-1446
+  24:	00000073          	ecall
+  28:	02d2d5b7          	lui	a1,0x2d2d
+  2c:	2d35859b          	addiw	a1,a1,723
+  30:	00c59593          	slli	a1,a1,0xc
+  34:	d2d58593          	addi	a1,a1,-723 # 2d2cd2d <__global_pointer$+0x2d2b4d8>
+  38:	00c59593          	slli	a1,a1,0xc
+  3c:	2d358593          	addi	a1,a1,723
+  40:	00d59593          	slli	a1,a1,0xd
+  44:	a5a58593          	addi	a1,a1,-1446
+  48:	00b29463          	bne	t0,a1,50 <_test_finish>
+  4c:	00100513          	addi	a0,zero,1
+
+0000000000000050 <_test_finish>:
+  50:	00000067          	jalr	zero,0(zero) # 0 <_start>
+	...

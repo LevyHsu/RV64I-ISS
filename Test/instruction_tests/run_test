@@ -1,0 +1,11 @@
+#! /bin/bash
+
+echo "l \"$1.hex\"" > $1.run
+echo "b 0" >> $1.run
+echo "." >> $1.run
+echo ". 1000" >> $1.run
+echo "x10" >> $1.run
+
+../../rv64sim/rv64sim ${RV64SIM_FLAGS} < $1.run
+
+rm -f $1.run

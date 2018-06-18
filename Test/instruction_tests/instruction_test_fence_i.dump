@@ -1,0 +1,24 @@
+
+instruction_test_fence_i.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	099002b7          	lui	t0,0x9900
+   8:	3132829b          	addiw	t0,t0,787
+   c:	00000397          	auipc	t2,0x0
+  10:	01038393          	addi	t2,t2,16 # 1c <instr>
+  14:	0053a023          	sw	t0,0(t2)
+  18:	0000100f          	fence.i
+
+000000000000001c <instr>:
+  1c:	05500313          	addi	t1,zero,85
+  20:	09900593          	addi	a1,zero,153
+  24:	00b31463          	bne	t1,a1,2c <_test_finish>
+  28:	00100513          	addi	a0,zero,1
+
+000000000000002c <_test_finish>:
+  2c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+	...

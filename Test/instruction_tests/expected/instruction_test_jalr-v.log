@@ -1,0 +1,80 @@
+133 bytes loaded, start address = 0000000000000000
+Breakpoint set at 0000000000000000
+Memory read word: address = 0000000000000000, data = 004002ef00000513
+Fetch: pc = 0000000000000000, ir = 00000513
+addi: rd = 10, rs1 = 0, immed_I = 0000000000000000
+Memory read word: address = 0000000000000000, data = 004002ef00000513
+Fetch: pc = 0000000000000004, ir = 004002ef
+jal: rd = 5, immed_J = 0000000000000004
+Memory read word: address = 0000000000000008, data = 0183036700000337
+Fetch: pc = 0000000000000008, ir = 00000337
+lui: rd = 6, immed_U = 0000000000000000
+Memory read word: address = 0000000000000008, data = 0183036700000337
+Fetch: pc = 000000000000000c, ir = 01830367
+jalr: rd = 6, rs1 = 6, immed_I = 0000000000000018
+Memory read word: address = 0000000000000018, data = 0080059340530333
+Fetch: pc = 0000000000000018, ir = 40530333
+sub: rd = 6, rs1 = 6, rs2 = 5
+Memory read word: address = 0000000000000018, data = 0080059340530333
+Fetch: pc = 000000000000001c, ir = 00800593
+addi: rd = 11, rs1 = 0, immed_I = 0000000000000008
+Memory read word: address = 0000000000000020, data = 004002ef06b31063
+Fetch: pc = 0000000000000020, ir = 06b31063
+bne: rs1 = 6, rs2 = 11, immed_B = 0000000000000060
+Memory read word: address = 0000000000000020, data = 004002ef06b31063
+Fetch: pc = 0000000000000024, ir = 004002ef
+jal: rd = 5, immed_J = 0000000000000004
+Memory read word: address = 0000000000000028, data = 054383e7000003b7
+Fetch: pc = 0000000000000028, ir = 000003b7
+lui: rd = 7, immed_U = 0000000000000000
+Memory read word: address = 0000000000000028, data = 054383e7000003b7
+Fetch: pc = 000000000000002c, ir = 054383e7
+jalr: rd = 7, rs1 = 7, immed_I = 0000000000000054
+Memory read word: address = 0000000000000050, data = 405383b300000067
+Fetch: pc = 0000000000000054, ir = 405383b3
+sub: rd = 7, rs1 = 7, rs2 = 5
+Memory read word: address = 0000000000000058, data = 02b3926300800593
+Fetch: pc = 0000000000000058, ir = 00800593
+addi: rd = 11, rs1 = 0, immed_I = 0000000000000008
+Memory read word: address = 0000000000000058, data = 02b3926300800593
+Fetch: pc = 000000000000005c, ir = 02b39263
+bne: rs1 = 7, rs2 = 11, immed_B = 0000000000000024
+Memory read word: address = 0000000000000060, data = 00000e37004002ef
+Fetch: pc = 0000000000000060, ir = 004002ef
+jal: rd = 5, immed_J = 0000000000000004
+Memory read word: address = 0000000000000060, data = 00000e37004002ef
+Fetch: pc = 0000000000000064, ir = 00000e37
+lui: rd = 28, immed_U = 0000000000000000
+Memory read word: address = 0000000000000068, data = 00000513038e0e67
+Fetch: pc = 0000000000000068, ir = 038e0e67
+jalr: rd = 28, rs1 = 28, immed_I = 0000000000000038
+Memory read word: address = 0000000000000038, data = 00800593405e0e33
+Fetch: pc = 0000000000000038, ir = 405e0e33
+sub: rd = 28, rs1 = 28, rs2 = 5
+Memory read word: address = 0000000000000038, data = 00800593405e0e33
+Fetch: pc = 000000000000003c, ir = 00800593
+addi: rd = 11, rs1 = 0, immed_I = 0000000000000008
+Memory read word: address = 0000000000000040, data = 00000eb704be1063
+Fetch: pc = 0000000000000040, ir = 04be1063
+bne: rs1 = 28, rs2 = 11, immed_B = 0000000000000040
+Memory read word: address = 0000000000000040, data = 00000eb704be1063
+Fetch: pc = 0000000000000044, ir = 00000eb7
+lui: rd = 29, immed_U = 0000000000000000
+Memory read word: address = 0000000000000048, data = 00000513074e8067
+Fetch: pc = 0000000000000048, ir = 074e8067
+jalr: rd = 0, rs1 = 29, immed_I = 0000000000000074
+Memory read word: address = 0000000000000070, data = 0000059300000067
+Fetch: pc = 0000000000000074, ir = 00000593
+addi: rd = 11, rs1 = 0, immed_I = 0000000000000000
+Memory read word: address = 0000000000000078, data = 0010051300b01463
+Fetch: pc = 0000000000000078, ir = 00b01463
+bne: rs1 = 0, rs2 = 11, immed_B = 0000000000000008
+Memory read word: address = 0000000000000078, data = 0010051300b01463
+Fetch: pc = 000000000000007c, ir = 00100513
+addi: rd = 10, rs1 = 0, immed_I = 0000000000000001
+Memory read word: address = 0000000000000080, data = 0000000000000067
+Fetch: pc = 0000000000000080, ir = 00000067
+jalr: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Breakpoint reached at 0000000000000000
+0000000000000001
+Instructions executed: 25

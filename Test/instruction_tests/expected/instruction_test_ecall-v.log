@@ -1,0 +1,68 @@
+85 bytes loaded, start address = 0000000000000000
+Breakpoint set at 0000000000000000
+Memory read word: address = 0000000000000000, data = 02d2d2b700000513
+Fetch: pc = 0000000000000000, ir = 00000513
+addi: rd = 10, rs1 = 0, immed_I = 0000000000000000
+Memory read word: address = 0000000000000000, data = 02d2d2b700000513
+Fetch: pc = 0000000000000004, ir = 02d2d2b7
+lui: rd = 5, immed_U = 0000000002d2d000
+Memory read word: address = 0000000000000008, data = 00c292932d32829b
+Fetch: pc = 0000000000000008, ir = 2d32829b
+addiw: rd = 5, rs1 = 5, immed_I = 00000000000002d3
+Memory read word: address = 0000000000000008, data = 00c292932d32829b
+Fetch: pc = 000000000000000c, ir = 00c29293
+slli: rd = 5, rs1 = 5, shamt = 12
+Memory read word: address = 0000000000000010, data = 00c29293d2d28293
+Fetch: pc = 0000000000000010, ir = d2d28293
+addi: rd = 5, rs1 = 5, immed_I = fffffffffffffd2d
+Memory read word: address = 0000000000000010, data = 00c29293d2d28293
+Fetch: pc = 0000000000000014, ir = 00c29293
+slli: rd = 5, rs1 = 5, shamt = 12
+Memory read word: address = 0000000000000018, data = 00d292932d328293
+Fetch: pc = 0000000000000018, ir = 2d328293
+addi: rd = 5, rs1 = 5, immed_I = 00000000000002d3
+Memory read word: address = 0000000000000018, data = 00d292932d328293
+Fetch: pc = 000000000000001c, ir = 00d29293
+slli: rd = 5, rs1 = 5, shamt = 13
+Memory read word: address = 0000000000000020, data = 00000073a5a28293
+Fetch: pc = 0000000000000020, ir = a5a28293
+addi: rd = 5, rs1 = 5, immed_I = fffffffffffffa5a
+Memory read word: address = 0000000000000020, data = 00000073a5a28293
+Fetch: pc = 0000000000000024, ir = 00000073
+ecall: unimplemented instruction
+Memory read word: address = 0000000000000028, data = 2d35859b02d2d5b7
+Fetch: pc = 0000000000000028, ir = 02d2d5b7
+lui: rd = 11, immed_U = 0000000002d2d000
+Memory read word: address = 0000000000000028, data = 2d35859b02d2d5b7
+Fetch: pc = 000000000000002c, ir = 2d35859b
+addiw: rd = 11, rs1 = 11, immed_I = 00000000000002d3
+Memory read word: address = 0000000000000030, data = d2d5859300c59593
+Fetch: pc = 0000000000000030, ir = 00c59593
+slli: rd = 11, rs1 = 11, shamt = 12
+Memory read word: address = 0000000000000030, data = d2d5859300c59593
+Fetch: pc = 0000000000000034, ir = d2d58593
+addi: rd = 11, rs1 = 11, immed_I = fffffffffffffd2d
+Memory read word: address = 0000000000000038, data = 2d35859300c59593
+Fetch: pc = 0000000000000038, ir = 00c59593
+slli: rd = 11, rs1 = 11, shamt = 12
+Memory read word: address = 0000000000000038, data = 2d35859300c59593
+Fetch: pc = 000000000000003c, ir = 2d358593
+addi: rd = 11, rs1 = 11, immed_I = 00000000000002d3
+Memory read word: address = 0000000000000040, data = a5a5859300d59593
+Fetch: pc = 0000000000000040, ir = 00d59593
+slli: rd = 11, rs1 = 11, shamt = 13
+Memory read word: address = 0000000000000040, data = a5a5859300d59593
+Fetch: pc = 0000000000000044, ir = a5a58593
+addi: rd = 11, rs1 = 11, immed_I = fffffffffffffa5a
+Memory read word: address = 0000000000000048, data = 0010051300b29463
+Fetch: pc = 0000000000000048, ir = 00b29463
+bne: rs1 = 5, rs2 = 11, immed_B = 0000000000000008
+Memory read word: address = 0000000000000048, data = 0010051300b29463
+Fetch: pc = 000000000000004c, ir = 00100513
+addi: rd = 10, rs1 = 0, immed_I = 0000000000000001
+Memory read word: address = 0000000000000050, data = 0000000000000067
+Fetch: pc = 0000000000000050, ir = 00000067
+jalr: rd = 0, rs1 = 0, immed_I = 0000000000000000
+Breakpoint reached at 0000000000000000
+0000000000000001
+Instructions executed: 21

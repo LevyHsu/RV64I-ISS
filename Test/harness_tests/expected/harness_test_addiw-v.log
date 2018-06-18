@@ -1,0 +1,33 @@
+Memory read word: address = 0000000000002000, data = 000000005a60811b
+Fetch: pc = 0000000000002000, ir = 5a60811b
+addiw: rd = 2, rs1 = 1, immed_I = 00000000000005a6
+00000000111115a6
+Memory read word: address = 0000000000002010, data = 00000000a530811b
+Fetch: pc = 0000000000002010, ir = a530811b
+addiw: rd = 2, rs1 = 1, immed_I = fffffffffffffa53
+0000000011110a53
+Memory read word: address = 0000000000002000, data = 000000005a60811b
+Fetch: pc = 0000000000002000, ir = 5a60811b
+addiw: rd = 2, rs1 = 1, immed_I = 00000000000005a6
+fffffffff11115a6
+Memory read word: address = 0000000000002010, data = 00000000a530811b
+Fetch: pc = 0000000000002010, ir = a530811b
+addiw: rd = 2, rs1 = 1, immed_I = fffffffffffffa53
+fffffffff1110a53
+Memory read word: address = 0000000000002020, data = 000000005a64849b
+Fetch: pc = 0000000000002020, ir = 5a64849b
+addiw: rd = 9, rs1 = 9, immed_I = 00000000000005a6
+00000000111115a6
+Memory read word: address = 0000000000002030, data = 00000000a534849b
+Fetch: pc = 0000000000002030, ir = a534849b
+addiw: rd = 9, rs1 = 9, immed_I = fffffffffffffa53
+0000000011110a53
+Memory read word: address = 0000000000002020, data = 000000005a64849b
+Fetch: pc = 0000000000002020, ir = 5a64849b
+addiw: rd = 9, rs1 = 9, immed_I = 00000000000005a6
+fffffffff11115a6
+Memory read word: address = 0000000000002030, data = 00000000a534849b
+Fetch: pc = 0000000000002030, ir = a534849b
+addiw: rd = 9, rs1 = 9, immed_I = fffffffffffffa53
+fffffffff1110a53
+Instructions executed: 8

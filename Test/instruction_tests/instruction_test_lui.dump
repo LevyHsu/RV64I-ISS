@@ -1,0 +1,30 @@
+
+instruction_test_lui.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	000012b7          	lui	t0,0x1
+   8:	000015b7          	lui	a1,0x1
+   c:	04b29063          	bne	t0,a1,4c <_test_finish>
+  10:	5a6b7337          	lui	t1,0x5a6b7
+  14:	5a6b75b7          	lui	a1,0x5a6b7
+  18:	02b31a63          	bne	t1,a1,4c <_test_finish>
+  1c:	a5b6c3b7          	lui	t2,0xa5b6c
+  20:	a5b6c5b7          	lui	a1,0xa5b6c
+  24:	02b39463          	bne	t2,a1,4c <_test_finish>
+  28:	aaaaaeb7          	lui	t4,0xaaaaa
+  2c:	555e8e93          	addi	t4,t4,1365 # ffffffffaaaaa555 <__global_pointer$+0xffffffffaaaa8d04>
+  30:	aaaaa5b7          	lui	a1,0xaaaaa
+  34:	5555859b          	addiw	a1,a1,1365
+  38:	00be9a63          	bne	t4,a1,4c <_test_finish>
+  3c:	00000eb7          	lui	t4,0x0
+  40:	00000593          	addi	a1,zero,0
+  44:	00be9463          	bne	t4,a1,4c <_test_finish>
+  48:	00100513          	addi	a0,zero,1
+
+000000000000004c <_test_finish>:
+  4c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+	...

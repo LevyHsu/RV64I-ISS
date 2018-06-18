@@ -1,0 +1,205 @@
+
+instruction_test_beq.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	02d2d437          	lui	s0,0x2d2d
+   8:	2d34041b          	addiw	s0,s0,723
+   c:	00c41413          	slli	s0,s0,0xc
+  10:	d2d40413          	addi	s0,s0,-723 # 2d2cd2d <__global_pointer$+0x2d2b2a0>
+  14:	00c41413          	slli	s0,s0,0xc
+  18:	2d340413          	addi	s0,s0,723
+  1c:	00d41413          	slli	s0,s0,0xd
+  20:	a5a40413          	addi	s0,s0,-1446
+  24:	02d2d4b7          	lui	s1,0x2d2d
+  28:	2d34849b          	addiw	s1,s1,723
+  2c:	00c49493          	slli	s1,s1,0xc
+  30:	d2d48493          	addi	s1,s1,-723 # 2d2cd2d <__global_pointer$+0x2d2b2a0>
+  34:	00c49493          	slli	s1,s1,0xc
+  38:	2d348493          	addi	s1,s1,723
+  3c:	00d49493          	slli	s1,s1,0xd
+  40:	a5a48493          	addi	s1,s1,-1446
+  44:	00940663          	beq	s0,s1,50 <L1_t>
+  48:	00000513          	addi	a0,zero,0
+  4c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000000000000050 <L1_t>:
+  50:	fd2d3937          	lui	s2,0xfd2d3
+  54:	d2d9091b          	addiw	s2,s2,-723
+  58:	00c91913          	slli	s2,s2,0xc
+  5c:	2d390913          	addi	s2,s2,723 # fffffffffd2d32d3 <__global_pointer$+0xfffffffffd2d1846>
+  60:	00c91913          	slli	s2,s2,0xc
+  64:	d2d90913          	addi	s2,s2,-723
+  68:	00d91913          	slli	s2,s2,0xd
+  6c:	5a590913          	addi	s2,s2,1445
+  70:	fd2d39b7          	lui	s3,0xfd2d3
+  74:	d2d9899b          	addiw	s3,s3,-723
+  78:	00c99993          	slli	s3,s3,0xc
+  7c:	2d398993          	addi	s3,s3,723 # fffffffffd2d32d3 <__global_pointer$+0xfffffffffd2d1846>
+  80:	00c99993          	slli	s3,s3,0xc
+  84:	d2d98993          	addi	s3,s3,-723
+  88:	00d99993          	slli	s3,s3,0xd
+  8c:	5a598993          	addi	s3,s3,1445
+  90:	01390663          	beq	s2,s3,9c <L2_t>
+  94:	00000513          	addi	a0,zero,0
+  98:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000000000000009c <L2_t>:
+  9c:	02d2d437          	lui	s0,0x2d2d
+  a0:	2d34041b          	addiw	s0,s0,723
+  a4:	00c41413          	slli	s0,s0,0xc
+  a8:	d2d40413          	addi	s0,s0,-723 # 2d2cd2d <__global_pointer$+0x2d2b2a0>
+  ac:	00c41413          	slli	s0,s0,0xc
+  b0:	2d340413          	addi	s0,s0,723
+  b4:	00d41413          	slli	s0,s0,0xd
+  b8:	a5a40413          	addi	s0,s0,-1446
+  bc:	fd2d34b7          	lui	s1,0xfd2d3
+  c0:	d2d4849b          	addiw	s1,s1,-723
+  c4:	00c49493          	slli	s1,s1,0xc
+  c8:	2d348493          	addi	s1,s1,723 # fffffffffd2d32d3 <__global_pointer$+0xfffffffffd2d1846>
+  cc:	00c49493          	slli	s1,s1,0xc
+  d0:	d2d48493          	addi	s1,s1,-723
+  d4:	00d49493          	slli	s1,s1,0xd
+  d8:	5a548493          	addi	s1,s1,1445
+  dc:	00940463          	beq	s0,s1,e4 <L3_t>
+  e0:	00c0006f          	jal	zero,ec <L3>
+
+00000000000000e4 <L3_t>:
+  e4:	00000513          	addi	a0,zero,0
+  e8:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000000000000ec <L3>:
+  ec:	02d2d937          	lui	s2,0x2d2d
+  f0:	2d39091b          	addiw	s2,s2,723
+  f4:	00c91913          	slli	s2,s2,0xc
+  f8:	d2d90913          	addi	s2,s2,-723 # 2d2cd2d <__global_pointer$+0x2d2b2a0>
+  fc:	00c91913          	slli	s2,s2,0xc
+ 100:	2d390913          	addi	s2,s2,723
+ 104:	00d91913          	slli	s2,s2,0xd
+ 108:	a5a90913          	addi	s2,s2,-1446
+ 10c:	fd2d39b7          	lui	s3,0xfd2d3
+ 110:	d2d9899b          	addiw	s3,s3,-723
+ 114:	00c99993          	slli	s3,s3,0xc
+ 118:	2d398993          	addi	s3,s3,723 # fffffffffd2d32d3 <__global_pointer$+0xfffffffffd2d1846>
+ 11c:	00c99993          	slli	s3,s3,0xc
+ 120:	d2d98993          	addi	s3,s3,-723
+ 124:	00d99993          	slli	s3,s3,0xd
+ 128:	5a598993          	addi	s3,s3,1445
+ 12c:	01390463          	beq	s2,s3,134 <L4_t>
+ 130:	00c0006f          	jal	zero,13c <L4>
+
+0000000000000134 <L4_t>:
+ 134:	00000513          	addi	a0,zero,0
+ 138:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+000000000000013c <L4>:
+ 13c:	0080006f          	jal	zero,144 <L5>
+
+0000000000000140 <L5_t>:
+ 140:	0500006f          	jal	zero,190 <L5_e>
+
+0000000000000144 <L5>:
+ 144:	02d2d437          	lui	s0,0x2d2d
+ 148:	2d34041b          	addiw	s0,s0,723
+ 14c:	00c41413          	slli	s0,s0,0xc
+ 150:	d2d40413          	addi	s0,s0,-723 # 2d2cd2d <__global_pointer$+0x2d2b2a0>
+ 154:	00c41413          	slli	s0,s0,0xc
+ 158:	2d340413          	addi	s0,s0,723
+ 15c:	00d41413          	slli	s0,s0,0xd
+ 160:	a5a40413          	addi	s0,s0,-1446
+ 164:	02d2d4b7          	lui	s1,0x2d2d
+ 168:	2d34849b          	addiw	s1,s1,723
+ 16c:	00c49493          	slli	s1,s1,0xc
+ 170:	d2d48493          	addi	s1,s1,-723 # 2d2cd2d <__global_pointer$+0x2d2b2a0>
+ 174:	00c49493          	slli	s1,s1,0xc
+ 178:	2d348493          	addi	s1,s1,723
+ 17c:	00d49493          	slli	s1,s1,0xd
+ 180:	a5a48493          	addi	s1,s1,-1446
+ 184:	fa940ee3          	beq	s0,s1,140 <L5_t>
+ 188:	00000513          	addi	a0,zero,0
+ 18c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000000000000190 <L5_e>:
+ 190:	0080006f          	jal	zero,198 <L6>
+
+0000000000000194 <L6_t>:
+ 194:	0500006f          	jal	zero,1e4 <L6_e>
+
+0000000000000198 <L6>:
+ 198:	fd2d3937          	lui	s2,0xfd2d3
+ 19c:	d2d9091b          	addiw	s2,s2,-723
+ 1a0:	00c91913          	slli	s2,s2,0xc
+ 1a4:	2d390913          	addi	s2,s2,723 # fffffffffd2d32d3 <__global_pointer$+0xfffffffffd2d1846>
+ 1a8:	00c91913          	slli	s2,s2,0xc
+ 1ac:	d2d90913          	addi	s2,s2,-723
+ 1b0:	00d91913          	slli	s2,s2,0xd
+ 1b4:	5a590913          	addi	s2,s2,1445
+ 1b8:	fd2d39b7          	lui	s3,0xfd2d3
+ 1bc:	d2d9899b          	addiw	s3,s3,-723
+ 1c0:	00c99993          	slli	s3,s3,0xc
+ 1c4:	2d398993          	addi	s3,s3,723 # fffffffffd2d32d3 <__global_pointer$+0xfffffffffd2d1846>
+ 1c8:	00c99993          	slli	s3,s3,0xc
+ 1cc:	d2d98993          	addi	s3,s3,-723
+ 1d0:	00d99993          	slli	s3,s3,0xd
+ 1d4:	5a598993          	addi	s3,s3,1445
+ 1d8:	fb390ee3          	beq	s2,s3,194 <L6_t>
+ 1dc:	00000513          	addi	a0,zero,0
+ 1e0:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000000000001e4 <L6_e>:
+ 1e4:	00c0006f          	jal	zero,1f0 <L7>
+
+00000000000001e8 <L7_t>:
+ 1e8:	00000513          	addi	a0,zero,0
+ 1ec:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+00000000000001f0 <L7>:
+ 1f0:	02d2d437          	lui	s0,0x2d2d
+ 1f4:	2d34041b          	addiw	s0,s0,723
+ 1f8:	00c41413          	slli	s0,s0,0xc
+ 1fc:	d2d40413          	addi	s0,s0,-723 # 2d2cd2d <__global_pointer$+0x2d2b2a0>
+ 200:	00c41413          	slli	s0,s0,0xc
+ 204:	2d340413          	addi	s0,s0,723
+ 208:	00d41413          	slli	s0,s0,0xd
+ 20c:	a5a40413          	addi	s0,s0,-1446
+ 210:	fd2d34b7          	lui	s1,0xfd2d3
+ 214:	d2d4849b          	addiw	s1,s1,-723
+ 218:	00c49493          	slli	s1,s1,0xc
+ 21c:	2d348493          	addi	s1,s1,723 # fffffffffd2d32d3 <__global_pointer$+0xfffffffffd2d1846>
+ 220:	00c49493          	slli	s1,s1,0xc
+ 224:	d2d48493          	addi	s1,s1,-723
+ 228:	00d49493          	slli	s1,s1,0xd
+ 22c:	5a548493          	addi	s1,s1,1445
+ 230:	fa940ce3          	beq	s0,s1,1e8 <L7_t>
+ 234:	00c0006f          	jal	zero,240 <L8>
+
+0000000000000238 <L8_t>:
+ 238:	00000513          	addi	a0,zero,0
+ 23c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+
+0000000000000240 <L8>:
+ 240:	02d2d437          	lui	s0,0x2d2d
+ 244:	2d34041b          	addiw	s0,s0,723
+ 248:	00c41413          	slli	s0,s0,0xc
+ 24c:	d2d40413          	addi	s0,s0,-723 # 2d2cd2d <__global_pointer$+0x2d2b2a0>
+ 250:	00c41413          	slli	s0,s0,0xc
+ 254:	2d340413          	addi	s0,s0,723
+ 258:	00d41413          	slli	s0,s0,0xd
+ 25c:	a5a40413          	addi	s0,s0,-1446
+ 260:	fd2d34b7          	lui	s1,0xfd2d3
+ 264:	d2d4849b          	addiw	s1,s1,-723
+ 268:	00c49493          	slli	s1,s1,0xc
+ 26c:	2d348493          	addi	s1,s1,723 # fffffffffd2d32d3 <__global_pointer$+0xfffffffffd2d1846>
+ 270:	00c49493          	slli	s1,s1,0xc
+ 274:	d2d48493          	addi	s1,s1,-723
+ 278:	00d49493          	slli	s1,s1,0xd
+ 27c:	5a548493          	addi	s1,s1,1445
+ 280:	fa940ce3          	beq	s0,s1,238 <L8_t>
+ 284:	00100513          	addi	a0,zero,1
+
+0000000000000288 <_test_finish>:
+ 288:	00000067          	jalr	zero,0(zero) # 0 <_start>
+	...

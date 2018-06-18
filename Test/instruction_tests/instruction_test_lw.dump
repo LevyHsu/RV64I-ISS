@@ -1,0 +1,85 @@
+
+instruction_test_lw.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	00010297          	auipc	t0,0x10
+   8:	00428293          	addi	t0,t0,4 # 10008 <pos+0x8>
+   c:	0002a303          	lw	t1,0(t0)
+  10:	3b3a45b7          	lui	a1,0x3b3a4
+  14:	9385859b          	addiw	a1,a1,-1736
+  18:	10b31863          	bne	t1,a1,128 <_test_finish>
+  1c:	00010297          	auipc	t0,0x10
+  20:	fec28293          	addi	t0,t0,-20 # 10008 <pos+0x8>
+  24:	0042a303          	lw	t1,4(t0)
+  28:	3f3e45b7          	lui	a1,0x3f3e4
+  2c:	d3c5859b          	addiw	a1,a1,-708
+  30:	0eb31c63          	bne	t1,a1,128 <_test_finish>
+  34:	00010297          	auipc	t0,0x10
+  38:	fd428293          	addi	t0,t0,-44 # 10008 <pos+0x8>
+  3c:	ffc2a303          	lw	t1,-4(t0)
+  40:	373635b7          	lui	a1,0x37363
+  44:	5345859b          	addiw	a1,a1,1332
+  48:	0eb31063          	bne	t1,a1,128 <_test_finish>
+  4c:	00010297          	auipc	t0,0x10
+  50:	fb828293          	addi	t0,t0,-72 # 10004 <pos+0x4>
+  54:	0002a303          	lw	t1,0(t0)
+  58:	373635b7          	lui	a1,0x37363
+  5c:	5345859b          	addiw	a1,a1,1332
+  60:	0cb31463          	bne	t1,a1,128 <_test_finish>
+  64:	00010297          	auipc	t0,0x10
+  68:	fa028293          	addi	t0,t0,-96 # 10004 <pos+0x4>
+  6c:	0042a303          	lw	t1,4(t0)
+  70:	3b3a45b7          	lui	a1,0x3b3a4
+  74:	9385859b          	addiw	a1,a1,-1736
+  78:	0ab31863          	bne	t1,a1,128 <_test_finish>
+  7c:	00010297          	auipc	t0,0x10
+  80:	f8828293          	addi	t0,t0,-120 # 10004 <pos+0x4>
+  84:	ffc2a303          	lw	t1,-4(t0)
+  88:	333235b7          	lui	a1,0x33323
+  8c:	1305859b          	addiw	a1,a1,304
+  90:	08b31c63          	bne	t1,a1,128 <_test_finish>
+  94:	00010297          	auipc	t0,0x10
+  98:	f8428293          	addi	t0,t0,-124 # 10018 <neg+0x8>
+  9c:	0002a303          	lw	t1,0(t0)
+  a0:	fbfb05b7          	lui	a1,0xfbfb0
+  a4:	9f85859b          	addiw	a1,a1,-1544
+  a8:	08b31063          	bne	t1,a1,128 <_test_finish>
+  ac:	00010297          	auipc	t0,0x10
+  b0:	f6c28293          	addi	t0,t0,-148 # 10018 <neg+0x8>
+  b4:	0042a303          	lw	t1,4(t0)
+  b8:	ffff05b7          	lui	a1,0xffff0
+  bc:	dfc5859b          	addiw	a1,a1,-516
+  c0:	06b31463          	bne	t1,a1,128 <_test_finish>
+  c4:	00010297          	auipc	t0,0x10
+  c8:	f5428293          	addi	t0,t0,-172 # 10018 <neg+0x8>
+  cc:	ffc2a303          	lw	t1,-4(t0)
+  d0:	f7f6f5b7          	lui	a1,0xf7f6f
+  d4:	5f45859b          	addiw	a1,a1,1524
+  d8:	04b31863          	bne	t1,a1,128 <_test_finish>
+  dc:	00010297          	auipc	t0,0x10
+  e0:	f3828293          	addi	t0,t0,-200 # 10014 <neg+0x4>
+  e4:	0002a303          	lw	t1,0(t0)
+  e8:	f7f6f5b7          	lui	a1,0xf7f6f
+  ec:	5f45859b          	addiw	a1,a1,1524
+  f0:	02b31c63          	bne	t1,a1,128 <_test_finish>
+  f4:	00010297          	auipc	t0,0x10
+  f8:	f2028293          	addi	t0,t0,-224 # 10014 <neg+0x4>
+  fc:	0042a303          	lw	t1,4(t0)
+ 100:	fbfb05b7          	lui	a1,0xfbfb0
+ 104:	9f85859b          	addiw	a1,a1,-1544
+ 108:	02b31063          	bne	t1,a1,128 <_test_finish>
+ 10c:	00010297          	auipc	t0,0x10
+ 110:	f0828293          	addi	t0,t0,-248 # 10014 <neg+0x4>
+ 114:	ffc2a303          	lw	t1,-4(t0)
+ 118:	f3f2f5b7          	lui	a1,0xf3f2f
+ 11c:	1f05859b          	addiw	a1,a1,496
+ 120:	00b31463          	bne	t1,a1,128 <_test_finish>
+ 124:	00100513          	addi	a0,zero,1
+
+0000000000000128 <_test_finish>:
+ 128:	00000067          	jalr	zero,0(zero) # 0 <_start>
+	...

@@ -1,0 +1,102 @@
+
+instruction_test_sraw.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	00000513          	addi	a0,zero,0
+   4:	002472b7          	lui	t0,0x247
+   8:	8ad2829b          	addiw	t0,t0,-1875
+   c:	00c29293          	slli	t0,t0,0xc
+  10:	f0b28293          	addi	t0,t0,-245 # 246f0b <__global_pointer$+0x24559a>
+  14:	00c29293          	slli	t0,t0,0xc
+  18:	4d728293          	addi	t0,t0,1239
+  1c:	00f29293          	slli	t0,t0,0xf
+  20:	c8d28293          	addi	t0,t0,-883
+  24:	00000393          	addi	t2,zero,0
+  28:	4072d33b          	sraw	t1,t0,t2
+  2c:	5a6b85b7          	lui	a1,0x5a6b8
+  30:	c8d5859b          	addiw	a1,a1,-883
+  34:	12b31c63          	bne	t1,a1,16c <_test_finish>
+  38:	002472b7          	lui	t0,0x247
+  3c:	8ad2829b          	addiw	t0,t0,-1875
+  40:	00c29293          	slli	t0,t0,0xc
+  44:	f0b28293          	addi	t0,t0,-245 # 246f0b <__global_pointer$+0x24559a>
+  48:	00c29293          	slli	t0,t0,0xc
+  4c:	4d728293          	addi	t0,t0,1239
+  50:	00f29293          	slli	t0,t0,0xf
+  54:	c8d28293          	addi	t0,t0,-883
+  58:	00800393          	addi	t2,zero,8
+  5c:	4072d33b          	sraw	t1,t0,t2
+  60:	005a75b7          	lui	a1,0x5a7
+  64:	b7c5859b          	addiw	a1,a1,-1156
+  68:	10b31263          	bne	t1,a1,16c <_test_finish>
+  6c:	002472b7          	lui	t0,0x247
+  70:	8ad2829b          	addiw	t0,t0,-1875
+  74:	00c29293          	slli	t0,t0,0xc
+  78:	f0b28293          	addi	t0,t0,-245 # 246f0b <__global_pointer$+0x24559a>
+  7c:	00c29293          	slli	t0,t0,0xc
+  80:	4d728293          	addi	t0,t0,1239
+  84:	00f29293          	slli	t0,t0,0xf
+  88:	c8d28293          	addi	t0,t0,-883
+  8c:	03000393          	addi	t2,zero,48
+  90:	4072d33b          	sraw	t1,t0,t2
+  94:	000065b7          	lui	a1,0x6
+  98:	a6b5859b          	addiw	a1,a1,-1429
+  9c:	0cb31863          	bne	t1,a1,16c <_test_finish>
+  a0:	002472b7          	lui	t0,0x247
+  a4:	8ad2829b          	addiw	t0,t0,-1875
+  a8:	00d29293          	slli	t0,t0,0xd
+  ac:	e2928293          	addi	t0,t0,-471 # 246e29 <__global_pointer$+0x2454b8>
+  b0:	00c29293          	slli	t0,t0,0xc
+  b4:	6db28293          	addi	t0,t0,1755
+  b8:	00e29293          	slli	t0,t0,0xe
+  bc:	7d828293          	addi	t0,t0,2008
+  c0:	00000393          	addi	t2,zero,0
+  c4:	4072d33b          	sraw	t1,t0,t2
+  c8:	a5b6c5b7          	lui	a1,0xa5b6c
+  cc:	7d85859b          	addiw	a1,a1,2008
+  d0:	08b31e63          	bne	t1,a1,16c <_test_finish>
+  d4:	002472b7          	lui	t0,0x247
+  d8:	8ad2829b          	addiw	t0,t0,-1875
+  dc:	00d29293          	slli	t0,t0,0xd
+  e0:	e2928293          	addi	t0,t0,-471 # 246e29 <__global_pointer$+0x2454b8>
+  e4:	00c29293          	slli	t0,t0,0xc
+  e8:	6db28293          	addi	t0,t0,1755
+  ec:	00e29293          	slli	t0,t0,0xe
+  f0:	7d828293          	addi	t0,t0,2008
+  f4:	01400393          	addi	t2,zero,20
+  f8:	4072d33b          	sraw	t1,t0,t2
+  fc:	a5b00593          	addi	a1,zero,-1445
+ 100:	06b31663          	bne	t1,a1,16c <_test_finish>
+ 104:	002472b7          	lui	t0,0x247
+ 108:	8ad2829b          	addiw	t0,t0,-1875
+ 10c:	00d29293          	slli	t0,t0,0xd
+ 110:	e2928293          	addi	t0,t0,-471 # 246e29 <__global_pointer$+0x2454b8>
+ 114:	00c29293          	slli	t0,t0,0xc
+ 118:	6db28293          	addi	t0,t0,1755
+ 11c:	00e29293          	slli	t0,t0,0xe
+ 120:	7d828293          	addi	t0,t0,2008
+ 124:	02c00393          	addi	t2,zero,44
+ 128:	4072d33b          	sraw	t1,t0,t2
+ 12c:	fffa65b7          	lui	a1,0xfffa6
+ 130:	b6c5859b          	addiw	a1,a1,-1172
+ 134:	02b31c63          	bne	t1,a1,16c <_test_finish>
+ 138:	002472b7          	lui	t0,0x247
+ 13c:	8ad2829b          	addiw	t0,t0,-1875
+ 140:	00d29293          	slli	t0,t0,0xd
+ 144:	e2928293          	addi	t0,t0,-471 # 246e29 <__global_pointer$+0x2454b8>
+ 148:	00c29293          	slli	t0,t0,0xc
+ 14c:	6db28293          	addi	t0,t0,1755
+ 150:	00e29293          	slli	t0,t0,0xe
+ 154:	7d828293          	addi	t0,t0,2008
+ 158:	01400393          	addi	t2,zero,20
+ 15c:	4072d03b          	sraw	zero,t0,t2
+ 160:	00000593          	addi	a1,zero,0
+ 164:	00b01463          	bne	zero,a1,16c <_test_finish>
+ 168:	00100513          	addi	a0,zero,1
+
+000000000000016c <_test_finish>:
+ 16c:	00000067          	jalr	zero,0(zero) # 0 <_start>
+	...

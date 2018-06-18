@@ -1,0 +1,47 @@
+Breakpoint set at 0000000000002004
+Memory read word: address = 0000000000002000, data = 0000000000000000
+Fetch: pc = 0000000000002000, ir = 00000000
+Illegal instruction: 00000000
+Memory read word: address = 0000000000002000, data = 0000000000000000
+Fetch: pc = 0000000000002004, ir = 00000000
+Illegal instruction: 00000000
+Memory read word: address = 0000000000002008, data = 0000000000000000
+Fetch: pc = 0000000000002008, ir = 00000000
+Illegal instruction: 00000000
+Memory read word: address = 0000000000002008, data = 0000000000000000
+Fetch: pc = 000000000000200c, ir = 00000000
+Illegal instruction: 00000000
+0000000000002010
+Memory read word: address = 0000000000002000, data = 0000000000000000
+Fetch: pc = 0000000000002000, ir = 00000000
+Illegal instruction: 00000000
+Breakpoint reached at 0000000000002004
+0000000000002004
+Breakpoint set at 0000000000000004
+Memory read word: address = 0000000000002000, data = 0000000000000000
+Fetch: pc = 0000000000002000, ir = 00000000
+Illegal instruction: 00000000
+Memory read word: address = 0000000000002000, data = 0000000000000000
+Fetch: pc = 0000000000002004, ir = 00000000
+Illegal instruction: 00000000
+Memory read word: address = 0000000000002008, data = 0000000000000000
+Fetch: pc = 0000000000002008, ir = 00000000
+Illegal instruction: 00000000
+Memory read word: address = 0000000000002008, data = 0000000000000000
+Fetch: pc = 000000000000200c, ir = 00000000
+Illegal instruction: 00000000
+0000000000002010
+Memory read word: address = 0000000000000000, data = 0000000000000000
+Fetch: pc = 0000000000000000, ir = 00000000
+Illegal instruction: 00000000
+Memory read word: address = 0000000000000000, data = 0000000000000000
+Fetch: pc = 0000000000000004, ir = 00000000
+Illegal instruction: 00000000
+Memory read word: address = 0000000000000008, data = 0000000000000000
+Fetch: pc = 0000000000000008, ir = 00000000
+Illegal instruction: 00000000
+Memory read word: address = 0000000000000008, data = 0000000000000000
+Fetch: pc = 000000000000000c, ir = 00000000
+Illegal instruction: 00000000
+0000000000000010
+Instructions executed: 13
