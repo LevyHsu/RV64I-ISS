@@ -10,11 +10,16 @@ parent directory
       compiled_tests
 
 command_tests
+```bash
    ./rv64sim < command_test_m.cmd
+```
 
 instruction tests
+```bash
    ./run_test instruction_test_add
+```
 or
+```bash
    ./run_instruction_tests
-   
+```   
 
