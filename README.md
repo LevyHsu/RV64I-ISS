@@ -8,11 +8,11 @@ $make
 
 parent directory
  - rv64sim
- - tests
-      command_tests
-      harness_tests
-      instruction_tests
-      compiled_tests
+ - tests<br/>
+      command_tests<br/>
+      harness_tests<br/>
+      instruction_tests<br/>
+      compiled_tests<br/>
 
 command_tests
 ```bash
