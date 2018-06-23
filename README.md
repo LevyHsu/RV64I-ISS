@@ -13,6 +13,8 @@ parent directory
         - harness_tests<br/>
         - instruction_tests<br/>
         - compiled_tests<br/>
+        
+Debug with "-v" flag
 
 command_tests
 ```bash
