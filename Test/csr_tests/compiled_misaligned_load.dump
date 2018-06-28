@@ -1,0 +1,179 @@
+
+compiled_misaligned_load.elf:     file format elf64-littleriscv
+
+
+Disassembly of section .text:
+
+0000000000000000 <_start>:
+   0:	2000006f          	j	200 <reset_vector>
+	...
+
+0000000000000100 <trap_vector_exception>:
+ 100:	1280006f          	j	228 <exception_handler>
+	...
+
+000000000000010c <trap_vector_machine_software_int>:
+ 10c:	ef5ff06f          	j	0 <_start>
+
+0000000000000110 <trap_vector_user_timer_int>:
+ 110:	ef1ff06f          	j	0 <_start>
+	...
+
+000000000000011c <trap_vector_machine_timer_int>:
+ 11c:	ee5ff06f          	j	0 <_start>
+
+0000000000000120 <trap_vector_user_external_int>:
+ 120:	ee1ff06f          	j	0 <_start>
+	...
+
+000000000000012c <trap_vector_machine_external_int>:
+ 12c:	ed5ff06f          	j	0 <_start>
+	...
+
+0000000000000200 <reset_vector>:
+ 200:	00000297          	auipc	t0,0x0
+ 204:	f0028293          	addi	t0,t0,-256 # 100 <trap_vector_exception>
+ 208:	0012e293          	ori	t0,t0,1
+ 20c:	30529073          	csrw	mtvec,t0
+ 210:	00002197          	auipc	gp,0x2
+ 214:	9e818193          	addi	gp,gp,-1560 # 1bf8 <__global_pointer$>
+ 218:	00020137          	lui	sp,0x20
+ 21c:	00000413          	li	s0,0
+ 220:	104000ef          	jal	ra,324 <main>
+ 224:	dddff06f          	j	0 <_start>
+
+0000000000000228 <exception_handler>:
+ 228:	fe810113          	addi	sp,sp,-24 # 1ffe8 <__global_pointer$+0x1e3f0>
+ 22c:	00513023          	sd	t0,0(sp)
+ 230:	00613423          	sd	t1,8(sp)
+ 234:	00713823          	sd	t2,16(sp)
+ 238:	342022f3          	csrr	t0,mcause
+ 23c:	dc02c2e3          	bltz	t0,0 <_start>
+ 240:	00229293          	slli	t0,t0,0x2
+ 244:	24828067          	jr	584(t0)
+
+0000000000000248 <exception_table>:
+ 248:	0340006f          	j	27c <exception_handler_instr_addr_misaligned>
+ 24c:	02c0006f          	j	278 <exception_handler_not_implemented>
+ 250:	0300006f          	j	280 <exception_handler_illegal_instr>
+ 254:	0300006f          	j	284 <exception_handler_breakpoint>
+ 258:	0300006f          	j	288 <exception_handler_load_addr_misaligned>
+ 25c:	01c0006f          	j	278 <exception_handler_not_implemented>
+ 260:	02c0006f          	j	28c <exception_handler_store_addr_misaligned>
+ 264:	0140006f          	j	278 <exception_handler_not_implemented>
+ 268:	0280006f          	j	290 <exception_handler_user_env_call>
+ 26c:	00c0006f          	j	278 <exception_handler_not_implemented>
+ 270:	0080006f          	j	278 <exception_handler_not_implemented>
+ 274:	0200006f          	j	294 <exception_handler_machine_env_call>
+
+0000000000000278 <exception_handler_not_implemented>:
+ 278:	d89ff06f          	j	0 <_start>
+
+000000000000027c <exception_handler_instr_addr_misaligned>:
+ 27c:	d85ff06f          	j	0 <_start>
+
+0000000000000280 <exception_handler_illegal_instr>:
+ 280:	d81ff06f          	j	0 <_start>
+
+0000000000000284 <exception_handler_breakpoint>:
+ 284:	d7dff06f          	j	0 <_start>
+
+0000000000000288 <exception_handler_load_addr_misaligned>:
+ 288:	0100006f          	j	298 <emulate_misaligned_ld>
+
+000000000000028c <exception_handler_store_addr_misaligned>:
+ 28c:	d75ff06f          	j	0 <_start>
+
+0000000000000290 <exception_handler_user_env_call>:
+ 290:	d71ff06f          	j	0 <_start>
+
+0000000000000294 <exception_handler_machine_env_call>:
+ 294:	d6dff06f          	j	0 <_start>
+
+0000000000000298 <emulate_misaligned_ld>:
+ 298:	343022f3          	csrr	t0,mbadaddr
+ 29c:	ff82f313          	andi	t1,t0,-8
+ 2a0:	00830393          	addi	t2,t1,8
+ 2a4:	00033303          	ld	t1,0(t1)
+ 2a8:	0003b383          	ld	t2,0(t2)
+ 2ac:	0072f293          	andi	t0,t0,7
+ 2b0:	00329293          	slli	t0,t0,0x3
+ 2b4:	00535333          	srl	t1,t1,t0
+ 2b8:	fc028293          	addi	t0,t0,-64
+ 2bc:	405002b3          	neg	t0,t0
+ 2c0:	005393b3          	sll	t2,t2,t0
+ 2c4:	0063e3b3          	or	t2,t2,t1
+ 2c8:	34039073          	csrw	mscratch,t2
+ 2cc:	341022f3          	csrr	t0,mepc
+ 2d0:	0002e283          	lwu	t0,0(t0)
+ 2d4:	00001337          	lui	t1,0x1
+ 2d8:	f803031b          	addiw	t1,t1,-128
+ 2dc:	0062f2b3          	and	t0,t0,t1
+ 2e0:	00000317          	auipc	t1,0x0
+ 2e4:	04030313          	addi	t1,t1,64 # 320 <emulate_misaligned_ld+0x88>
+ 2e8:	00036383          	lwu	t2,0(t1)
+ 2ec:	0053e3b3          	or	t2,t2,t0
+ 2f0:	00000317          	auipc	t1,0x0
+ 2f4:	02830313          	addi	t1,t1,40 # 318 <emulate_misaligned_ld+0x80>
+ 2f8:	00732023          	sw	t2,0(t1)
+ 2fc:	341022f3          	csrr	t0,mepc
+ 300:	00428293          	addi	t0,t0,4
+ 304:	34129073          	csrw	mepc,t0
+ 308:	00013283          	ld	t0,0(sp)
+ 30c:	00813303          	ld	t1,8(sp)
+ 310:	01013383          	ld	t2,16(sp)
+ 314:	01810113          	addi	sp,sp,24
+ 318:	00000013          	nop
+ 31c:	30200073          	mret
+ 320:	34002073          	csrr	zero,mscratch
+
+0000000000000324 <main>:
+ 324:	fc010113          	addi	sp,sp,-64
+ 328:	02813c23          	sd	s0,56(sp)
+ 32c:	04010413          	addi	s0,sp,64
+ 330:	3e803783          	ld	a5,1000(zero) # 3e8 <main+0xc4>
+ 334:	fcf43023          	sd	a5,-64(s0)
+ 338:	3f003783          	ld	a5,1008(zero) # 3f0 <main+0xcc>
+ 33c:	fcf43423          	sd	a5,-56(s0)
+ 340:	00100793          	li	a5,1
+ 344:	fef42623          	sw	a5,-20(s0)
+ 348:	07c0006f          	j	3c4 <main+0xa0>
+ 34c:	fec42783          	lw	a5,-20(s0)
+ 350:	fc040713          	addi	a4,s0,-64
+ 354:	00f707b3          	add	a5,a4,a5
+ 358:	fef43023          	sd	a5,-32(s0)
+ 35c:	fe043783          	ld	a5,-32(s0)
+ 360:	0007b783          	ld	a5,0(a5)
+ 364:	fcf43c23          	sd	a5,-40(s0)
+ 368:	fc043703          	ld	a4,-64(s0)
+ 36c:	fec42783          	lw	a5,-20(s0)
+ 370:	0037979b          	slliw	a5,a5,0x3
+ 374:	0007879b          	sext.w	a5,a5
+ 378:	00f75733          	srl	a4,a4,a5
+ 37c:	fc843683          	ld	a3,-56(s0)
+ 380:	00800613          	li	a2,8
+ 384:	fec42783          	lw	a5,-20(s0)
+ 388:	40f607bb          	subw	a5,a2,a5
+ 38c:	0007879b          	sext.w	a5,a5
+ 390:	0037979b          	slliw	a5,a5,0x3
+ 394:	0007879b          	sext.w	a5,a5
+ 398:	00f697b3          	sll	a5,a3,a5
+ 39c:	00f767b3          	or	a5,a4,a5
+ 3a0:	fcf43823          	sd	a5,-48(s0)
+ 3a4:	fd843703          	ld	a4,-40(s0)
+ 3a8:	fd043783          	ld	a5,-48(s0)
+ 3ac:	00f70663          	beq	a4,a5,3b8 <main+0x94>
+ 3b0:	00000793          	li	a5,0
+ 3b4:	0240006f          	j	3d8 <main+0xb4>
+ 3b8:	fec42783          	lw	a5,-20(s0)
+ 3bc:	0017879b          	addiw	a5,a5,1
+ 3c0:	fef42623          	sw	a5,-20(s0)
+ 3c4:	fec42783          	lw	a5,-20(s0)
+ 3c8:	0007871b          	sext.w	a4,a5
+ 3cc:	00700793          	li	a5,7
+ 3d0:	f6e7dee3          	ble	a4,a5,34c <main+0x28>
+ 3d4:	00100793          	li	a5,1
+ 3d8:	00078513          	mv	a0,a5
+ 3dc:	03813403          	ld	s0,56(sp)
+ 3e0:	04010113          	addi	sp,sp,64
+ 3e4:	00008067          	ret
