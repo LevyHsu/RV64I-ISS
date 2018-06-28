@@ -21,9 +21,15 @@ class processor {
   bool debug;
   int *pc_array;
   int **register_array;
+  int **csr_array;
+  unsigned int Privilege_level;
+  bool csr_defined[4096];
+  bool f11_f14_read_only;
   long long int instruction_executed;
   memory* Main_Memory;
   uint64_t breakpoint;
+
+
  public:
 
   // Consructor
@@ -54,14 +60,32 @@ class processor {
   // Set breakpoint at an address
   void set_breakpoint(uint64_t address);
 
+  void set_instruction_count(uint64_t count);
+
   uint64_t get_instruction_count();
 
-  void set_instruction_count(uint64_t set);
   // Used for Postgraduate assignment. Undergraduate assignment can return 0.
   uint64_t get_cycle_count();
 
-  void set_reg_certian_bit(unsigned int reg_num, int start,int end,bool negative);
+  // Show privilege level
+  void show_prv();
 
+  // Set privilege level
+  void set_prv(unsigned int prv_num);
+
+  unsigned int return_prv();
+
+  // Display CSR value
+  void show_csr(unsigned int csr_num);
+
+  uint64_t return_csr(unsigned int csr_num);
+
+  // Set CSR to new value
+  void set_csr(unsigned int csr_num, uint64_t new_value);
+
+  bool csr_is_defined(unsigned int csr_num);
+
+  bool illegal_csr_write(unsigned int csr_num);
 };
 
 #endif
