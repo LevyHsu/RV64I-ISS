@@ -36,16 +36,16 @@ LUI AUIPC JAL JALR BEQ BNE BLT BGE BLTU BGEU LB LH LW LBU LHU SB SH SW ADDI SLTI
 ### RV64I Base Instruction Set (in addition to RV32I): 
 LWU LD SD SLLI SRLI SRAI ADDIW SLLIW SRLIW SRAIW ADDW SUBW SLLW SRLW SRAW
 ###CSR Register:
-0xF11 Mevendorid
-0xF12 Marchid
-0xF13 Mimpid
-0xF14 Mhartid
-0x300 Mstatus
-0x301 Misa 
-0x304 Mie
-0x305 Mtvec
-0x340 Mscratch  
-0x341 Mepc
-0x342 Mcause
-0x343 Mtval
-0x344 Mip
+0xF11 Mevendorid\
+0xF12 Marchid\
+0xF13 Mimpid\
+0xF14 Mhartid\
+0x300 Mstatus\
+0x301 Misa\
+0x304 Mie\
+0x305 Mtvec\
+0x340 Mscratch\  
+0x341 Mepc\
+0x342 Mcause\
+0x343 Mtval\
+0x344 Mip\
