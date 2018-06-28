@@ -1,6 +1,6 @@
 #ifndef MEMORY_H
 #define MEMORY_H
-#define BLOCKSIZE 1024
+#define BLOCKSIZE 1024 
 
 #include <vector>
 #include <inttypes.h>

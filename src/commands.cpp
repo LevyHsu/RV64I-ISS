@@ -156,6 +156,48 @@ bool command_match_l(string& command, unsigned int i, string& filename) {
 }
 
 
+bool command_match_prv(string& command, unsigned int i, bool& num_present, unsigned int& num) {
+  num_present = false;
+  if (i == command.length() || command[i] != 'p') return false;
+  i++;
+  if (i == command.length() || command[i] != 'r') return false;
+  i++;
+  if (i == command.length() || command[i] != 'v') return false;
+  i++;
+  command_skip_optional_whitespace(command, i);
+  if (i < command.length() && command[i] == '=') {
+    i++;
+    num_present = true;
+    command_skip_optional_whitespace(command, i);
+    if (!command_match_decimal_number(command, i, num)) return false;
+    command_skip_optional_whitespace(command, i);
+  }
+  return i == command.length() || command[i] == '#';
+}
+
+
+bool command_match_csr(string& command, unsigned int i, bool& data_present, uint64_t& address, uint64_t& data) {
+  data_present = false;
+  if (i == command.length() || command[i] != 'c') return false;
+  i++;
+  if (i == command.length() || command[i] != 's') return false;
+  i++;
+  if (i == command.length() || command[i] != 'r') return false;
+  i++;
+  if (!command_skip_required_whitespace(command, i)) return false;
+  if (!command_match_hex_number(command, i, address)) return false;
+  command_skip_optional_whitespace(command, i);
+  if (i < command.length() && command[i] == '=') {
+    i++;
+    data_present = true;
+    command_skip_optional_whitespace(command, i);
+    if (!command_match_hex_number(command, i, data)) return false;
+    command_skip_optional_whitespace(command, i);
+  }
+  return i == command.length() || command[i] == '#';
+}
+
+
 // Command interpreter function
 void interpret_commands(memory* main_memory, processor* cpu, bool verbose) {
 
@@ -176,51 +218,71 @@ void interpret_commands(memory* main_memory, processor* cpu, bool verbose) {
     }
     else if (command_match_x(command, i, data_present, num, data)) {  // Check for x command
       if (num > 31) {
-	cout << "Incorrect register number" << endl;
+        cout << "Incorrect register number" << endl;
       }
       else if (!data_present) {  // No new value
-	cpu->show_reg(num);  // so just show register value
+        cpu->show_reg(num);  // so just show register value
       }
       else {
-	cpu->set_reg(num, data);  // Update register
+        cpu->set_reg(num, data);  // Update register
       }
     }
     else if (command_match_pc(command, i, address_present, address)) {  // Check for pc command
       if (!address_present) {  // No new value
-	cpu->show_pc();  // so just show pc value
+        cpu->show_pc();  // so just show pc value
       }
       else {
-	cpu->set_pc(address);  // Update pc
+        cpu->set_pc(address);  // Update pc
       }
     }
     else if (command_match_m(command, i, data_present, address, data)) {  // Check for m command
       if (!data_present) {  // No new value
-	main_memory->show_address(address);  // so just show memory word value
+        main_memory->show_address(address);  // so just show memory word value
       }
       else {
-	main_memory->set_address(address, data);  // Update memory word
+        main_memory->set_address(address, data);  // Update memory word
       }
     }
     else if (command_match_dot(command, i, num_present, num)) {  // Check for . command
       if (!num_present) {  // No instruction count value
-	cpu->execute(1, false, cpu);  // so just execute one instruction without breakpoint check
+        cpu->execute(1, false,cpu);  // so just execute one instruction without breakpoint check
       }
       else {
-	cpu->execute(num, true, cpu);  // Execute specified number of instructions with breakpoint check
+        cpu->execute(num, true,cpu);  // Execute specified number of instructions with breakpoint check
       }
     }
     else if (command_match_b(command, i, address_present, address)) {  // Check for b command
       if (!address_present) {  // No address value
-	cpu->clear_breakpoint();  // so just clear breakpoint
+        cpu->clear_breakpoint();  // so just clear breakpoint
       }
       else {
-	cpu->set_breakpoint(address);  // Set breakpoint at the address
+        cpu->set_breakpoint(address);  // Set breakpoint at the address
       }
     }
     else if (command_match_l(command, i, filename)) {  // Check for l command
       uint64_t start_address;
       if (main_memory->load_file(filename, start_address)) {  // Load using the specified file name
-	cpu->set_pc(start_address);
+        cpu->set_pc(start_address);
+      }
+    }
+    else if (command_match_prv(command, i, num_present, num)) {  // Check for prv command
+      if (!num_present) { // No new privilege level
+        cpu->show_prv();  // so just show current privilege level
+      } else if (num == 0 || num == 3) {
+        cpu->set_prv(num);  // Set the current privilege level
+      } else {
+        cout << "Incorrect privilege level" << endl;
+      }
+    }
+    else if (command_match_csr(command, i, data_present, address, data)) {  // Check for csr command
+      if (address > 0xfffU) {
+        cout << "Incorrect CSR number" << endl;
+      }
+      else if (!data_present) {  // No new value
+        cpu->show_csr(address);  // so just show memory word value
+      }
+      else {
+        cpu->set_csr(address, data);  // Update memory word
       }
     }
     else {
