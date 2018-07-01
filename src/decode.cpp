@@ -46,7 +46,7 @@ void instructions::array_load(uint64_t memory_address)
     }   
 }
 
-long long int instructions::return_signed_bit_value(int begin,int end)
+uint32_t instructions::return_signed_bit_value(int begin,int end)
 {
     long long int result=0,power=0;
     
@@ -75,7 +75,7 @@ long long int instructions::return_signed_bit_value(int begin,int end)
     return 0;
 }
 
-long long int instructions::return_unsigned_bit_value(int begin,int end)
+uint32_t instructions::return_unsigned_bit_value(int begin,int end)
 {
     long long int result=0,power=0;
     for (int i=begin;i<end+1;i++)
@@ -121,12 +121,12 @@ string instructions::instraction_type()
     }
         
     //RV32I Base ins set
-    if (op=="1110110") return "LUI";                    //Priority
+    if (op=="1110110") return "LUI";   
     if (op=="1110100") return "AUIPC";
     if (op=="1111011") return "JAL";
-    if (op=="1110011"&&funct3=="000") return "JALR";    //Priority
+    if (op=="1110011"&&funct3=="000") return "JALR";
     if (op=="1100011"&&funct3=="000") return "BEQ";
-    if (op=="1100011"&&funct3=="100") return "BNE";     //Priority
+    if (op=="1100011"&&funct3=="100") return "BNE";
     if (op=="1100011"&&funct3=="001") return "BLT";
     if (op=="1100011"&&funct3=="101") return "BGE";
     if (op=="1100011"&&funct3=="011") return "BLTU";
@@ -139,13 +139,13 @@ string instructions::instraction_type()
     if (op=="1100010"&&funct3=="000") return "SB";
     if (op=="1100010"&&funct3=="100") return "SH";
     if (op=="1100010"&&funct3=="010") return "SW";
-    if (op=="1100100"&&funct3=="000") return "ADDI";    //Priority
+    if (op=="1100100"&&funct3=="000") return "ADDI";
     if (op=="1100100"&&funct3=="010") return "SLTI";
     if (op=="1100100"&&funct3=="110") return "SLTIU";
     if (op=="1100100"&&funct3=="001") return "XORI";
     if (op=="1100100"&&funct3=="011") return "ORI";
     if (op=="1100100"&&funct3=="111") return "ANDI";
-    if (op=="1100100"&&funct3=="100") return "SLLI"; //Priority
+    if (op=="1100100"&&funct3=="100") return "SLLI";
     if (op=="1100100"&&funct3=="101"&&instruction_array[30]==0) return "SRLI";
     if (op=="1100100"&&funct3=="101"&&instruction_array[30]==1) return "SRAI";
     if (op=="1100110"&&funct3=="000"&&funct7=="0000000") return "ADD";
@@ -181,7 +181,7 @@ string instructions::instraction_type()
     //if (op=="1100100"&&funct3=="100") return "SLLI";
     //if (op=="1100100"&&funct3=="101") return "SRLI";
     //if (op=="1100100"&&funct3=="101") return "SRAI";
-    if (op=="1101100"&&funct3=="000") return "ADDIW";              //Priority
+    if (op=="1101100"&&funct3=="000") return "ADDIW";
     if (op=="1101100"&&funct3=="100"&&funct7=="0000000") return "SLLIW";
     if (op=="1101100"&&funct3=="101"&&instruction_array[30]==0) return "SRLIW";
     if (op=="1101100"&&funct3=="101"&&instruction_array[30]==1) return "SRAIW";
