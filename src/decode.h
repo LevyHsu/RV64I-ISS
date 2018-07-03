@@ -35,5 +35,4 @@ class instructions
 };
 
 #endif
-//011001011010
-//1626+
+
