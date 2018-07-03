@@ -17,8 +17,8 @@ class instructions
     bool debug;
     void array_load(uint64_t memory_address);
     string instraction_type();
-    long long int return_signed_bit_value(int begin,int end);
-    long long int return_unsigned_bit_value(int begin,int end);
+    uint32_t return_signed_bit_value(int begin,int end);
+    uint32_t return_unsigned_bit_value(int begin,int end);
     void misaligned_load(uint64_t error_address);
     void misaligned_store(uint64_t error_address);
     void machine_mode_interrupt();
