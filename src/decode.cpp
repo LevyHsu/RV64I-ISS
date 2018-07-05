@@ -93,7 +93,8 @@ string instructions::instraction_type()
     for (int i=0;i<7;i++)
     {
        op.push_back(instruction_array[i]+ '0');
-       //cout<<"ins_array["<<i<<"] = "<<instruction_array[i]<<endl;
+       if(debug)
+          cout<<"ins_array["<<i<<"] = "<<instruction_array[i]<<endl;
     }
     
     string funct3;
@@ -969,7 +970,7 @@ void instructions::execute_command(uint64_t memory_address)
         else
            CPU->set_reg(rd,0);
        if (debug)
-            cout<<"slt: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", rs2 = "<<dec<<return_unsigned_bit_value(20,24)<<endl;
+             cout<<"slt: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", rs2 = "<<dec<<return_unsigned_bit_value(20,24)<<endl;
     }
     if (type=="SLTU")
     {
@@ -984,7 +985,7 @@ void instructions::execute_command(uint64_t memory_address)
         else
            CPU->set_reg(rd,0);
        if (debug)
-            cout<<"sltu: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", rs2 = "<<dec<<return_unsigned_bit_value(20,24)<<endl;
+             cout<<"sltu: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", rs2 = "<<dec<<return_unsigned_bit_value(20,24)<<endl;
     }
     if (type=="XOR")
     {
@@ -1306,7 +1307,7 @@ void instructions::execute_command(uint64_t memory_address)
             }
             
             if (debug)
-            cout<<"ld: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", immed_I = "<<setfill('0')<<setw(16)<<hex<<imm<<endl;
+                 cout<<"ld: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", immed_I = "<<setfill('0')<<setw(16)<<hex<<imm<<endl;
         
     }
     if (type=="SD")
@@ -1369,7 +1370,7 @@ void instructions::execute_command(uint64_t memory_address)
             CPU->set_reg( rd , result | 0xffffffff00000000);
         CPU->set_reg( rd , result );
      if (debug)
-        cout<<"addiw: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", immed_I = "<<setfill('0')<<setw(16)<<hex<<imm<<endl;
+          cout<<"addiw: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", immed_I = "<<setfill('0')<<setw(16)<<hex<<imm<<endl;
     }
     if (type=="SLLIW")
     {
@@ -1466,7 +1467,7 @@ void instructions::execute_command(uint64_t memory_address)
 
        CPU->set_reg(rd, temp);
        if(debug)
-          cout<<"sllw: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", rs2 = "<<dec<<return_unsigned_bit_value(20,24)<<endl;
+           cout<<"sllw: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", rs2 = "<<dec<<return_unsigned_bit_value(20,24)<<endl;
     }
     if (type=="SRLW")
     {
@@ -1483,7 +1484,7 @@ void instructions::execute_command(uint64_t memory_address)
 
        CPU->set_reg(rd, temp);
        if(debug)
-          cout<<"srlw: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", rs2 = "<<dec<<return_unsigned_bit_value(20,24)<<endl;
+           cout<<"srlw: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", rs2 = "<<dec<<return_unsigned_bit_value(20,24)<<endl;
     }
     if (type=="SRAW")
     {
