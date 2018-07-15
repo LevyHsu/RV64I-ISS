@@ -46,7 +46,7 @@ LWU LD SD SLLI SRLI SRAI ADDIW SLLIW SRLIW SRAIW ADDW SUBW SLLW SRLW SRAW
 0x301 Misa\
 0x304 Mie\
 0x305 Mtvec\
-0x340 Mscratch\  
+0x340 Mscratch\ 
 0x341 Mepc\
 0x342 Mcause\
 0x343 Mtval\
