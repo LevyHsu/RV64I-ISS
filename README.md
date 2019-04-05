@@ -1,3 +1,4 @@
+[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 # RV64I-ISS
 ## An instruction set simulator (ISS) for the RV64I subset of the RISC-V instruction set with full memory simulation.
 
