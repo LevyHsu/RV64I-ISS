@@ -18,7 +18,6 @@
 
 using namespace std;
 
-
 void command_skip_optional_whitespace(string& command, unsigned int& i) {
   while (i < command.length() && isspace(command[i])) i++;
 }
