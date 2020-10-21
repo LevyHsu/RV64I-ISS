@@ -43,16 +43,18 @@ int main(int argc, char* argv[]) {
     
     unsigned long int cpu_instruction_count;
 
-    for (int i = 1; i < argc; i++) {
-	// Process the next option
-	arg = string(argv[i]);
-	if (arg == "-v")  // Verbose output
-	    verbose = true;
-	else if (arg == "-c")  // Cycle and instruction reporting enabled
-	    cycle_reporting = true;
-	else {
-	    cout << "Unknown option: " << arg << endl;
-	}
+    for (int i = 1; i < argc; i++) 
+    {
+	    // Process the next option
+	    arg = string(argv[i]);
+	    if (arg == "-v")  // Verbose output
+	        verbose = true;
+	    else if (arg == "-c")  // Cycle and instruction reporting enabled
+	        cycle_reporting = true;
+	else 
+        {
+	        cout << "Unknown option: " << arg << endl;
+	    }
     }
 
     main_memory = new memory (verbose);
@@ -61,17 +63,15 @@ int main(int argc, char* argv[]) {
     interpret_commands(main_memory, cpu, verbose);
     
     // Report final statistics
-
     cpu_instruction_count = cpu->get_instruction_count();
     cout << "Instructions executed: " << dec << cpu_instruction_count << endl;
     
-    if (cycle_reporting) {
-	// Required for postgraduate Computer Architecture course
-	unsigned long int cpu_cycle_count;
-
-	cpu_cycle_count = cpu->get_cycle_count();
-
-	cout << "CPU cycle count: " << dec << cpu_cycle_count << endl;
+    if (cycle_reporting) 
+    {
+	    // Required for postgraduate Computer Architecture course
+	    unsigned long int cpu_cycle_count;
+	    cpu_cycle_count = cpu->get_cycle_count();
+	    cout << "CPU cycle count: " << dec << cpu_cycle_count << endl;
     }
     
 }
