@@ -691,7 +691,6 @@ void instructions::execute_command(uint64_t memory_address)
         uint64_t data = Main_Memory->read_unaligned(address) & 0xff;
         data &= 0xFF;
         CPU->set_reg(rd,data);
-        CPU->set_reg(rd,data);
         if(debug)
         {
             cout<<"lbu: rd = "<<dec<<rd<<", rs1 = "<<dec<<return_unsigned_bit_value(15,19)<<", immed_I = "<<setfill('0')<<setw(16)<<hex<<imm<<endl;
