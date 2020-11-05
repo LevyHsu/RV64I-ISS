@@ -689,7 +689,6 @@ void instructions::execute_command(uint64_t memory_address)
         } 
         uint64_t address = imm + rs1;
         uint64_t data = Main_Memory->read_unaligned(address) & 0xff;
-        data &= 0xFF;
         CPU->set_reg(rd,data);
         if(debug)
         {
@@ -708,8 +707,6 @@ void instructions::execute_command(uint64_t memory_address)
         } 
         uint64_t address = imm + rs1;
         uint64_t data = Main_Memory->read_unaligned(address) & 0xffff;
-        data &= 0xFFFF;
-
         if (address%2 != 0)
             misaligned_load(address);
         else
